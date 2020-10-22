@@ -7,9 +7,9 @@ on:
 
 jobs:
     lint:
-        name: run linter
+        name: Run linter
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - name: run golangci-lint
-            uses: actions-contrib/golangci-lint@v1
+            - name: Run golangci-lint
+              uses: actions-contrib/golangci-lint@v1
