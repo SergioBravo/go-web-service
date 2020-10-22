@@ -16,7 +16,8 @@ func main() {
 
 	r.Get("/hello", h.Hello)
 
-	err := http.ListenAndServe("localhost:8080", r)
+	log.Println("starting server at localhost:8080")
+	err := http.ListenAndServe(":8080", r)
 	if err != nil {
 		log.Fatal(err)
 	}
