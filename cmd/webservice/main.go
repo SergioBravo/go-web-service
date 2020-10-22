@@ -26,7 +26,7 @@ func main() {
 
 	r := chi.NewRouter()
 
-	h := handler.NewHandler()
+	h := handler.NewHandler(apiClient)
 
 	r.Get("/hello", h.Hello)
 
