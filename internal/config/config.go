@@ -2,7 +2,7 @@ package config
 
 // Server config
 type Server struct {
-	Host string `yaml:"host" env:"HOST" env-default:"0.0.0.0`
+	Host string `yaml:"host" env:"HOST" env-default:"0.0.0.0` // nolint
 	Port string `yaml:"port" env:"PORT"`
 }
 

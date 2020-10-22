@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -17,14 +18,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	path := cfg.Host + ":" + cfg.Port
+
 	r := chi.NewRouter()
 
 	h := handler.NewHandler()
 
 	r.Get("/hello", h.Hello)
 
-	log.Println("starting server at localhost:8080")
-	err = http.ListenAndServe(":8080", r)
+	log.Println(fmt.Sprintf("starting server at %s", path))
+	err = http.ListenAndServe(path, r)
 	if err != nil {
 		log.Fatal(err)
 	}
